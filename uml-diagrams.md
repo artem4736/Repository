@@ -6,19 +6,19 @@
 ---
 
 ## 2. Діаграма класів
-![Class Diagram](images/class_diagram.png)
+![Class Diagram](class_diagram.png)
 > **Пояснення:** показує основні сутності (User, Reminder, Calendar) і зв’язки між ними.
 
 ---
 
 ## 3. Діаграма послідовностей
-![Sequence Diagram](images/sequence_diagram.png)
+![Sequence Diagram](sequence_diagram.png)
 > **Use Case:** створення нагадування — як користувач взаємодіє із системою та БД.
 
 ---
 
 ## 4. Діаграма станів
-![State Diagram](images/state_diagram.png)
+![State Diagram](state_diagram.png)
 > **Об’єкт:** Reminder. Від створення → запланованого → повідомлення → завершеного.
 
 ---
