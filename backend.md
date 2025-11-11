@@ -58,7 +58,7 @@ def get_reminders():
     return jsonify([{'id': r.id, 'title': r.title, 'date': r.date} for r in reminders])
 
 if __name__ == '__main__':
-      app.run(  host = '0.0.0.0' ))
+      app.run(  host = '0.0.0.0' )
 
 4.	Тестування: 
 
