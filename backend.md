@@ -1,22 +1,14 @@
-1. Вступ
+Структура файлу: Backend: Основи
 
-Backend для Smart Reminder. Реалізовано RESTful API на Flask.
-
-Ендпоінти:
-
+Вступ: Backend для Smart Reminder. Реалізовано RESTful API на Flask. Ендпоінти
 GET /reminders — отримати список нагадувань
-
 POST /users/register — створити нового користувача
-
-2. Налаштування
-Необхідні бібліотеки
+Налаштування: Необхідні бібліотеки
 pip install flask flask-cors flask-sqlalchemy
-
 Конфігурація Flask
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///chatbot.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-3. Код сервера
+3.	Код сервера: 
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
@@ -28,13 +20,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///smart_reminder.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-# Модель користувача
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
 
-# Модель нагадування
 class Reminder(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(150), nullable=False)
@@ -42,15 +32,12 @@ class Reminder(db.Model):
     time = db.Column(db.String(50))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
-# Створення таблиць у БД
 db.create_all()
 
-# Головна сторінка
 @app.route('/')
 def home():
     return "Backend Smart Reminder працює!"
 
-# Реєстрація користувача
 @app.route('/users/register', methods=['POST'])
 def register_user():
     data = request.json
@@ -61,32 +48,29 @@ def register_user():
     db.session.commit()
     return jsonify({'id': new_user.id, 'name': new_user.name}), 201
 
-# Отримати всі нагадування
 @app.route('/reminders', methods=['GET'])
 def get_reminders():
     reminders = Reminder.query.all()
     return jsonify([{'id': r.id, 'title': r.title, 'date': r.date} for r in reminders])
 
-# Запуск сервера
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+      app.run(  host = '0.0.0.0' ))
+```bash
 
-4. Тестування
+4.	Тестування: 
 
-Postman:
-
-GET /tests → 200 OK
-
-POST /users/register → 201 Created
-
-5. Інтеграція з БД
-
+Postman
+•	GET /tests → 200 OK 
+•	POST /users/register → 201 Created
+  
+ 
+ 
+ 
+5.	Інтеграція з БД: 
 Модель користувача (User) створює таблицю users у базі smart_reminder.db.
+SELECT * FROM user;
+ 
 
-SELECT * FROM users;
-
-6. Висновки
-
+6.	Висновки: 
 API відповідає user stories (реєстрація користувача).
-
-Готово до інтеграції з frontend.
+Готово до інтеграції з frontend
