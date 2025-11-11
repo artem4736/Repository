@@ -1,9 +1,13 @@
-Структура файлу: Backend: Основи
+1.	Вступ: 
+Backend для Smart Reminder. 
+Реалізовано RESTful API на Flask.
+Ендпоінти
+- `GET /reminders` — отримати список нагадувань  
+- `POST /users/register` — створити нового користувача
 
-Вступ: Backend для Smart Reminder. Реалізовано RESTful API на Flask. Ендпоінти
-GET /reminders — отримати список нагадувань
-POST /users/register — створити нового користувача
-Налаштування: Необхідні бібліотеки
+2.	Налаштування: 
+Необхідні бібліотеки
+```bash
 pip install flask flask-cors flask-sqlalchemy
 Конфігурація Flask
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///chatbot.db'
@@ -55,7 +59,6 @@ def get_reminders():
 
 if __name__ == '__main__':
       app.run(  host = '0.0.0.0' ))
-```bash
 
 4.	Тестування: 
 
@@ -73,4 +76,5 @@ SELECT * FROM user;
 
 6.	Висновки: 
 API відповідає user stories (реєстрація користувача).
-Готово до інтеграції з frontend
+Готово до інтеграції з frontend.
+
