@@ -61,18 +61,16 @@ if __name__ == '__main__':
       app.run(  host = '0.0.0.0' )
 
 4.	Тестування: 
-
 Postman
-•	GET /tests → 200 OK 
+•	GET /tests → 200 OK
+(test1.png)
 •	POST /users/register → 201 Created
+(test2.png)
   
- 
- 
- 
 5.	Інтеграція з БД: 
 Модель користувача (User) створює таблицю users у базі smart_reminder.db.
 SELECT * FROM user;
- 
+  (test3.png)
 
 6.	Висновки: 
 API відповідає user stories (реєстрація користувача).
