@@ -4,7 +4,7 @@
 База даних призначена для зберігання користувачів, нагадувань, сповіщень і календарів.
 
 ## 2. ER-діаграма
-![ER Diagram](images/er_diagrams.png)
+![ER Diagram](er_diagrams.png)
 
 ## 3. Сутності та зв’язки
 Users 1:N Reminders  
