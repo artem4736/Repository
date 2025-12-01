@@ -5,16 +5,14 @@
 2. Wireframe
 Прототип програми створений в figma
 
- 
+ ![](fronted1.png)
+![](fronted2.png)
+ ![](fronted3.png)
+  ![](fronted4.png)
+![](fronted5.png)
+ ![](fronted6.png)
+ ![](fronted7.png)
 
- 
-  
-
- 
- 
-
- 
- 
 
 3. Код
 •	index.html
@@ -540,9 +538,9 @@ POST /reminders
 Body: {"title":"Лаба","date":"2025-01-20","time":"14:00"}
 Status: 201 Created
 
- 
- 
-
+  ![](test1.png)
+  ![](test2.png)
+ ![](test3.png)
  
 
 5. Інтеграція
